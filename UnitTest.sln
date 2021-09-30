@@ -1,14 +1,34 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30114.105
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31717.71
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "aula01", "aula01", "{B82277DF-5B94-4CAC-BD4C-861FFF55F138}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "aula02", "aula02", "{6023BCFE-3196-4E43-B803-79641066ED86}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "aula03", "aula03", "{CF3C3E60-5470-4F1B-A149-89E7301F81AC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aula03", "aula03\src\Aula03\Aula03.csproj", "{0BC7AAE2-996B-4445-87A8-89573F2B8B30}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0BC7AAE2-996B-4445-87A8-89573F2B8B30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BC7AAE2-996B-4445-87A8-89573F2B8B30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BC7AAE2-996B-4445-87A8-89573F2B8B30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BC7AAE2-996B-4445-87A8-89573F2B8B30}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0BC7AAE2-996B-4445-87A8-89573F2B8B30} = {CF3C3E60-5470-4F1B-A149-89E7301F81AC}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {19763ED3-809D-497A-AB22-0D269F834EB2}
 	EndGlobalSection
 EndGlobal
