@@ -19,7 +19,7 @@ namespace Aula02
         }
     }
 
-    ]public interface ISendMail
+    public interface ISendMail
     {
         void Send(string message);
     }
