@@ -22,7 +22,13 @@ namespace Aula03
         public bool IsAdmin { get; set; }
     }
 
-    public class MenuRepositorio
+    public interface IMenuRepositorio
+    {
+        IList<Menu> GetByUser(Guid idUsuario);
+        IList<Menu> GetAdminMenu();
+    }
+
+    public class MenuRepositorio : IMenuRepositorio
     {
         private readonly DbContext _dbContext;
 
@@ -36,24 +42,24 @@ namespace Aula03
             return _dbContext.Set<Menu>().Where(x => x.UserId == idUsuario).ToList();
         }
 
-        public IList<Menu> GetByUserAdmin(Guid idUsuario)
+        public IList<Menu> GetAdminMenu()
         {
-            return _dbContext.Set<Menu>().Where(x => x.UserId == idUsuario && x.IsAdminOnly).ToList();
+            return _dbContext.Set<Menu>().Where(x => x.IsAdminOnly).ToList();
         }
     }
 
     public class MenuService
     {
-        private readonly MenuRepositorio _menuRepositorio;
+        private readonly IMenuRepositorio _menuRepositorio;
 
-        public MenuService(MenuRepositorio menuRepositorio)
+        public MenuService(IMenuRepositorio menuRepositorio)
         {
             _menuRepositorio = menuRepositorio;
         }
 
         public IList<Menu> BuscarMenu(User usuario)
         {
-            if (usuario.IsAdmin) return _menuRepositorio.GetByUserAdmin(usuario.Id);
+            if (usuario.IsAdmin) return _menuRepositorio.GetAdminMenu();
 
             else return _menuRepositorio.GetByUser(usuario.Id);
         }
