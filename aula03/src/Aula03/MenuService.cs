@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -51,14 +52,18 @@ namespace Aula03
     public class MenuService
     {
         private readonly IMenuRepositorio _menuRepositorio;
+        private readonly ILogger _logger;
 
-        public MenuService(IMenuRepositorio menuRepositorio)
+        public MenuService(ILogger logger, IMenuRepositorio menuRepositorio)
         {
+            _logger = logger;
             _menuRepositorio = menuRepositorio;
         }
 
         public IList<Menu> BuscarMenu(User usuario)
         {
+            _logger.LogInformation("BuscarMenu chamado");
+
             if (usuario.IsAdmin) return _menuRepositorio.GetAdminMenu();
 
             else return _menuRepositorio.GetByUser(usuario.Id);

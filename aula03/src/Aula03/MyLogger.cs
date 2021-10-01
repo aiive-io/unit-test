@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace Aula03
 {
+
     public class MyLoggerArchive
     {
         private readonly string _path;
@@ -13,7 +14,15 @@ namespace Aula03
         }
     }
 
-    public class MyLoggerStorage
+    public interface IMyLoggerStorage
+    {
+        bool IsFull();
+        void Add(string log);
+        void Clean();
+        bool Archive();
+    }
+
+    public class MyLoggerStorage : IMyLoggerStorage
     {
         private readonly IList<MyLoggerArchive> _logArchives = new List<MyLoggerArchive>();
 
@@ -51,11 +60,11 @@ namespace Aula03
 
     public class MyLogger
     {
-        public MyLoggerStorage _storage;        
+        private IMyLoggerStorage _storage;        
 
-        public MyLogger()
+        public MyLogger(IMyLoggerStorage storage)
         {
-            _storage = new MyLoggerStorage();
+            _storage = storage;
         }
 
         public void Log(string log)

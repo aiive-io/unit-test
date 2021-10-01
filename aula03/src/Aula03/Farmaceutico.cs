@@ -17,7 +17,6 @@ namespace Aula03
         public DateTime? DataInativacao { get; private set; }
         public Situacao Situacao { get; private set; }
 
-
         public Farmaceutico(Guid id, string nome)
         {
             Id = id;
@@ -28,7 +27,7 @@ namespace Aula03
         {
             if (DataAdmissao.HasValue)
             {
-                throw new ArgumentException("Farmaceutico já possui DataAdmissao", nameof(DataAdmissao));
+                throw new ArgumentException("Farmaceutico já possui DataAdmissao.", nameof(DataAdmissao));
             }
 
             DataAdmissao = dataAdmissao;
@@ -49,7 +48,9 @@ namespace Aula03
         
         public void Afastar(DateTime dataInativacao)
         {
-            if (Situacao == Situacao.Afastado && DataInativacao.HasValue) throw new ArgumentException("Farmaceutico já Afastado", "DataInativacao");
+            if (Situacao == Situacao.Afastado && DataInativacao.HasValue) throw new ArgumentException("Farmaceutico já afastado", "DataInativacao");
+
+            if (Situacao == Situacao.Inativo) throw new ArgumentException("Farmaceutico inativado não pode ser afastado", "DataInativacao");
 
             if (DataAdmissao >= dataInativacao) throw new ArgumentException("Data de Inativação não pode ser anterior à data de admissão.", "DataInativacao");
 
