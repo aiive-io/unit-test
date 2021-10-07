@@ -7,5 +7,5 @@ namespace Aula04.Negocios
         void Atualizar(ContaBancaria contaBancaria);
         ContaBancaria GetById(Guid id);
    }
-    
+
 }
