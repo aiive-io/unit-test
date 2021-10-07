@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Aula03
+namespace Aula04
 {
     public enum Situacao
     {
