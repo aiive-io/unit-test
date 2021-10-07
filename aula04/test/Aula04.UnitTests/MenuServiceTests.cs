@@ -52,6 +52,7 @@ namespace Aula04.UnitTest
         }
     }
 
+
     public class FakeLogger : ILogger
     {
         public bool Logged { get; set; }

@@ -10,9 +10,7 @@ namespace Aula04.Aplicacao.Controllers
     public class ServicosBancariosController : ControllerBase
     {
         private readonly IContaBancariaService _contaBancariaService;
-
         private readonly ILogger<ServicosBancariosController> _logger;
-
 
         public ServicosBancariosController(
             IContaBancariaService contaBancariaService,
@@ -21,7 +19,6 @@ namespace Aula04.Aplicacao.Controllers
             _contaBancariaService = contaBancariaService;
             _logger = logger;
         }
-
 
         [HttpGet(":id")]
         public IActionResult Debitar([FromRoute] string id, [FromQuery] decimal valor)
