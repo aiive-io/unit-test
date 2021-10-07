@@ -17,7 +17,7 @@ namespace Aula04.Negocios
         {
             var conta = _contaBancariaRepositorio.GetById(id);
 
-            if(conta.Saldo >= valor)
+            if(PossuiSaldo(conta, valor))
             {
                 conta.Saldo -= valor;
             }
@@ -33,6 +33,11 @@ namespace Aula04.Negocios
 
             // vale a pena ser testado se o método foi chamado quando passa a não ser do nosso controle.
             _contaBancariaRepositorio.Atualizar(conta);
+        }
+
+        private bool PossuiSaldo(ContaBancaria conta, decimal valor)
+        {
+            return conta.Saldo >= valor;
         }
     }
     
