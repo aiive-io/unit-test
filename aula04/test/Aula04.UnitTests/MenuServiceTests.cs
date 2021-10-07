@@ -1,11 +1,9 @@
-﻿using FluentAssertions;
-using Microsoft.EntityFrameworkCore;
+﻿using FakeItEasy;
+using FluentAssertions;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xunit;
 
 namespace Aula04.UnitTest
@@ -16,7 +14,8 @@ namespace Aula04.UnitTest
         [Fact]
         public void BuscarMenu_MetodoInvocado_LogEhAdicionado()
         {
-            var stubMenuRepositorio = new FakeMenuRepositorio();
+            var stubMenuRepositorio = A.Fake<IMenuRepositorio>();
+
             var mockLogger = new FakeLogger();
 
             var menuService = new MenuService(mockLogger, stubMenuRepositorio);
@@ -29,7 +28,7 @@ namespace Aula04.UnitTest
 
             menuService.BuscarMenu(user);
 
-            mockLogger.Logged.Should().BeTrue();
+            A.CallTo(() => mockLogger.LogInformation("BuscarMenu chamado")).MustHaveHappened();            
         }
 
         [Fact]

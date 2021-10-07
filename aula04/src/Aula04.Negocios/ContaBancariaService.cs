@@ -28,8 +28,10 @@ namespace Aula04.Negocios
             }
             else
             {
-                throw new NegocioException("Saldo insuficiente");
+                throw new NegocioException("Saldo insuficiente.");
             }
+
+            _contaBancariaRepositorio.Atualizar(conta);
         }
     }
     

@@ -4,7 +4,7 @@ namespace Aula04.Negocios
 {
     public interface IContaBancariaRepositorio
     {
-        void Debitar(Guid id, decimal valor);
+        void Atualizar(ContaBancaria contaBancaria);
         ContaBancaria GetById(Guid id);
    }
     
