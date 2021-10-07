@@ -7,7 +7,9 @@ namespace Aula04.Negocios
         private readonly IContaBancariaRepositorio _contaBancariaRepositorio;
         private readonly IChequeEspecialRepositorio _chequeEspecialRepositorio;
 
-        public ContaBancariaService(IContaBancariaRepositorio contaBancariaRepositorio, IChequeEspecialRepositorio chequeEspecialRepositorio)
+        public ContaBancariaService(
+            IContaBancariaRepositorio contaBancariaRepositorio, 
+            IChequeEspecialRepositorio chequeEspecialRepositorio)
         {
             _contaBancariaRepositorio = contaBancariaRepositorio;
             _chequeEspecialRepositorio = chequeEspecialRepositorio;
