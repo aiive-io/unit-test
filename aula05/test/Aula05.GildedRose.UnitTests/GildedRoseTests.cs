@@ -225,5 +225,33 @@ namespace Aula05.GildedRose.UnitTests
             item.Quality.Should().Be(qualityEsperado);
             item.SellIn.Should().Be(sellInEsperado);
         }
+
+        [Theory]
+        [InlineData(10, 10, 9, 9)]
+        [InlineData(10, 1, 9, 0)]
+        [InlineData(0, 1, 0, 0)]
+        public void UpdateQuality_ItemNormalSellInMaiorQue0_QualidadeCaiUmaUnidadeAteMinimo0(
+            int quality,
+            int sellIn,
+            int qualityEsperado,
+            int sellInEsperado)
+        {
+            //arrange
+            var item = new Item
+            {
+                Name = "Normal",
+                Quality = quality,
+                SellIn = sellIn
+            };
+
+            var gildedRose = CriarGildRose(item);
+
+            //act
+            gildedRose.UpdateQuality();
+
+            //assert
+            item.Quality.Should().Be(qualityEsperado);
+            item.SellIn.Should().Be(sellInEsperado);
+        }
     }
 }
