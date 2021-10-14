@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Aula05.GildedRose\Aula05.GildedRose.csproj" />
+    <ProjectReference Include="..\..\src\Aula06.GildedRose\Aula06.GildedRose.csproj" />
   </ItemGroup>
 
 </Project>

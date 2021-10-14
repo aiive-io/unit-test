@@ -10,29 +10,56 @@ using Aula06.PetClinic.Webapi.Dominio;
 
 namespace Aula06.PetClinic.Webapi.Controllers.V1
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class PetsController : ControllerBase
+    public interface IPetRepository
+    {
+        Task<IEnumerable<Pet>> ToListAsync();
+        Task<Pet> FindAsync(int id);
+    }
+
+    public class PetRepository : IPetRepository
     {
         private readonly Aula06PetClinicWebapiContext _context;
-        
-        public PetsController(Aula06PetClinicWebapiContext context)
+
+        public PetRepository(Aula06PetClinicWebapiContext context)
         {
             _context = context;
         }
 
-        // GET: api/Pets
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Pet>>> GetPet()
+        public async Task<Pet> FindAsync(int id)
+        {
+            return await _context.Pet.FindAsync(id);
+        }
+
+        public async Task<IEnumerable<Pet>> ToListAsync()
         {
             return await _context.Pet.ToListAsync();
         }
+    }
 
+    [Route("api/[controller]")]
+    [ApiController]
+    public class PetsController : ControllerBase
+    {
+        private readonly IPetRepository _repository;
+
+        public PetsController(IPetRepository repository)
+        {
+            _repository = repository;
+        }
+
+        // GET: api/Pets
+        [HttpGet]
+        public async Task<IEnumerable<Pet>> GetPet()
+        {
+            return await _repository.ToListAsync();
+        }
+
+        /*
         // GET: api/Pets/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Pet>> GetPet(int id)
         {
-            var pet = await _context.Pet.FindAsync(id);
+            var pet = await _repository.FindAsync(id);
 
             if (pet == null)
             {
@@ -52,11 +79,11 @@ namespace Aula06.PetClinic.Webapi.Controllers.V1
                 return BadRequest();
             }
 
-            _context.Entry(pet).State = EntityState.Modified;
+            _repository.Entry(pet).State = EntityState.Modified;
 
             try
             {
-                await _context.SaveChangesAsync();
+                await _repository.SaveChangesAsync();
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -78,8 +105,8 @@ namespace Aula06.PetClinic.Webapi.Controllers.V1
         [HttpPost]
         public async Task<ActionResult<Pet>> PostPet(Pet pet)
         {
-            _context.Pet.Add(pet);
-            await _context.SaveChangesAsync();
+            _repository.Add(pet);
+            await _repository.SaveChangesAsync();
 
             return CreatedAtAction("GetPet", new { id = pet.Id }, pet);
         }
@@ -88,21 +115,22 @@ namespace Aula06.PetClinic.Webapi.Controllers.V1
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeletePet(int id)
         {
-            var pet = await _context.Pet.FindAsync(id);
+            var pet = await _repository.FindAsync(id);
             if (pet == null)
             {
                 return NotFound();
             }
 
-            _context.Pet.Remove(pet);
-            await _context.SaveChangesAsync();
+            _repository.Remove(pet);
+            await _repository.SaveChangesAsync();
 
             return NoContent();
         }
 
         private bool PetExists(int id)
         {
-            return _context.Pet.Any(e => e.Id == id);
+            return _repository.Any(e => e.Id == id);
         }
+        */
     }
 }
