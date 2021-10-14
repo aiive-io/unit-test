@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31702.278
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31717.71
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "aula01", "aula01", "{B82277DF-5B94-4CAC-BD4C-861FFF55F138}"
 EndProject
@@ -46,9 +46,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "aula05", "aula05", "{FE98C1
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aula05.GildedRose", "aula05\src\Aula05.GildedRose\Aula05.GildedRose.csproj", "{664AF472-FADF-4984-9708-193564B839BB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aula05.GildedRose.UnitTests", "aula05\test\Aula05.GildedRose.UnitTests\Aula05.GildedRose.UnitTests.csproj", "{2BFCB91A-B2C3-4FD0-B0BA-EC481B9F1A46}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aula05.GildedRose.UnitTests", "aula05\test\Aula05.GildedRose.UnitTests\Aula05.GildedRose.UnitTests.csproj", "{2BFCB91A-B2C3-4FD0-B0BA-EC481B9F1A46}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aula05.GildedRose.Tests.Shared", "aula05\test\Aula05.GildedRose.Tests.Shared\Aula05.GildedRose.Tests.Shared.csproj", "{131809AF-6B35-45A1-82BF-A7F429D90F0F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aula05.GildedRose.Tests.Shared", "aula05\test\Aula05.GildedRose.Tests.Shared\Aula05.GildedRose.Tests.Shared.csproj", "{131809AF-6B35-45A1-82BF-A7F429D90F0F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "aula06", "aula06", "{11BB7C04-CC38-48CA-8A33-875F583FC335}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aula06.PetClinic.Webapi", "aula06\src\Aula06.PetClinic.Webapi\Aula06.PetClinic.Webapi.csproj", "{1C3DCE30-43C6-40EC-A038-D52420FD970E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aula06.PetClinic.Webapi.UnitTests", "aula06\test\Aula06.PetClinic.Webapi.UnitTests\Aula06.PetClinic.Webapi.UnitTests.csproj", "{E89B1375-9CCA-4C3F-BA58-33B7AF967165}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aula06", "aula06\src\Aula06\Aula06.csproj", "{2B5CD5B0-419E-45D9-ACBA-F0092CEB0ACD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -124,6 +132,18 @@ Global
 		{131809AF-6B35-45A1-82BF-A7F429D90F0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{131809AF-6B35-45A1-82BF-A7F429D90F0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{131809AF-6B35-45A1-82BF-A7F429D90F0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C3DCE30-43C6-40EC-A038-D52420FD970E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C3DCE30-43C6-40EC-A038-D52420FD970E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C3DCE30-43C6-40EC-A038-D52420FD970E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C3DCE30-43C6-40EC-A038-D52420FD970E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E89B1375-9CCA-4C3F-BA58-33B7AF967165}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E89B1375-9CCA-4C3F-BA58-33B7AF967165}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E89B1375-9CCA-4C3F-BA58-33B7AF967165}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E89B1375-9CCA-4C3F-BA58-33B7AF967165}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B5CD5B0-419E-45D9-ACBA-F0092CEB0ACD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B5CD5B0-419E-45D9-ACBA-F0092CEB0ACD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B5CD5B0-419E-45D9-ACBA-F0092CEB0ACD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B5CD5B0-419E-45D9-ACBA-F0092CEB0ACD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -146,6 +166,9 @@ Global
 		{664AF472-FADF-4984-9708-193564B839BB} = {FE98C1B3-352D-4854-AD63-0088E9C2E29D}
 		{2BFCB91A-B2C3-4FD0-B0BA-EC481B9F1A46} = {FE98C1B3-352D-4854-AD63-0088E9C2E29D}
 		{131809AF-6B35-45A1-82BF-A7F429D90F0F} = {FE98C1B3-352D-4854-AD63-0088E9C2E29D}
+		{1C3DCE30-43C6-40EC-A038-D52420FD970E} = {11BB7C04-CC38-48CA-8A33-875F583FC335}
+		{E89B1375-9CCA-4C3F-BA58-33B7AF967165} = {11BB7C04-CC38-48CA-8A33-875F583FC335}
+		{2B5CD5B0-419E-45D9-ACBA-F0092CEB0ACD} = {11BB7C04-CC38-48CA-8A33-875F583FC335}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {19763ED3-809D-497A-AB22-0D269F834EB2}
