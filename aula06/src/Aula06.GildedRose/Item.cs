@@ -22,4 +22,29 @@ namespace Aula05.GildedRose
             Quality = 80;
         }
     }
+
+    public class AgedBrie: Item
+    {
+        public AgedBrie(int sellIn, int quality)
+        {
+            SellIn = sellIn;
+            Quality = quality;
+        }
+
+        public void UpdateQuality()
+        {
+            if (Quality == 50) return;
+            
+            SellIn -= 1;
+            
+            if(SellIn < 0)
+            {
+                Quality += 2;
+            }
+            else
+            {
+                Quality += 1;
+            }
+        }
+    }
 }

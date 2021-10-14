@@ -38,14 +38,4 @@ namespace Aula05.GildedRose.UnitTests
             return _item;
         }
     }
-
-    public class SulfurasBuilder : ItemBuilder
-    {
-        public SulfurasBuilder(int sellIn) :base()
-        {
-            this.ComNome("Sulfuras, Hand of Ragnaros")
-                .ComQualidade(80)
-                .ComSellIn(sellIn);             
-        }
-    }
 }

@@ -10,18 +10,6 @@ namespace Aula05.GildedRose.UnitTests
 {
     public class GildedRoseTests
     {        
-        private Item CriarSulfuras(int quality, int sellin)
-        {
-            var item = new Item
-            {
-                Name = "Sulfuras, Hand of Ragnaros",
-                Quality = quality,
-                SellIn = sellin
-            };
-
-            return item;
-        }
-
         private GildedRose CriarGildRose(Item item)
         {
             return new GildedRose(new List<Item> { item });
@@ -32,7 +20,7 @@ namespace Aula05.GildedRose.UnitTests
         public void UpdateQuality_ItemSulfuras_NuncaAlteraSellIn()
         {
             //arrange
-            var item = new SulfurasBuilder(-1).Build();                
+            var item = new Sulfuras(-1);
 
             var items = new List<Item>() { item };
             var gildedRose = new GildedRose(items);
@@ -49,7 +37,7 @@ namespace Aula05.GildedRose.UnitTests
         public void UpdateQuality_ItemSulfuras_NuncaCaiQualidade()
         {
             //arrange
-            var item = CriarSulfuras(80, -1);
+            var item = new Sulfuras(-1);
 
             var items = new List<Item>() { item };
             var gildedRose = new GildedRose(items);
@@ -79,8 +67,8 @@ namespace Aula05.GildedRose.UnitTests
         public static IEnumerable<object[]> ItensAgedBrie =>
         new List<object[]>
         {
-            new object[] { new Item { Name = "Aged Brie", Quality = 50, SellIn = 10 }, 9 },
-            new object[] { new Item { Name = "Aged Brie", Quality = 50, SellIn = -1 }, -2 },            
+            new object[] { new AgedBrie(10, 50), 9 },
+            new object[] { new AgedBrie(-1, 50),-2 },            
         };
 
         [Theory]
@@ -99,7 +87,7 @@ namespace Aula05.GildedRose.UnitTests
 
         [Theory]
         [MemberData(nameof(ItensBackstage))]
-        public void UpdateQuality_ItemBacktageQualidade50_QualidadeNaoAltera(Item item, int sellInEsperado)
+        public void UpdateQuality_ItemBackstageQualidade50_QualidadeNaoAltera(Item item, int sellInEsperado)
         {
             var gildedRose = CriarGildRose(item);
 
@@ -120,13 +108,8 @@ namespace Aula05.GildedRose.UnitTests
             int sellInEsperado)
         {
             //arrange
-            var item = new Item
-            {
-                Name = "Aged Brie",
-                Quality = quality,
-                SellIn = sellIn
-            };
-
+            var item = new AgedBrie(sellIn, quality);
+            
             var gildedRose = CriarGildRose(item);
 
             //act
@@ -147,13 +130,8 @@ namespace Aula05.GildedRose.UnitTests
             int sellInEsperado)
         {
             //arrange
-            var item = new Item
-            {
-                Name = "Aged Brie",
-                Quality = quality,
-                SellIn = sellIn
-            };
-
+            var item = new AgedBrie(sellIn, quality);
+            
             var gildedRose = CriarGildRose(item);
 
             //act

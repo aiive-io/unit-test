@@ -4,6 +4,8 @@ namespace Aula05.GildedRose
 {
     public class GildedRose
     {
+        const int QUALIDADEMAXIMA = 50;
+
         IList<Item> Items;
 
         public GildedRose(IList<Item> Items)
@@ -22,12 +24,7 @@ namespace Aula05.GildedRose
         {
             return nome == "Backstage passes to a TAFKAL80ETC concert";
         }
-        
-        private bool EhSulfuras(string nome)
-        {
-            return nome == "Sulfuras, Hand of Ragnaros";
-        }
-
+ 
         private bool EhAgedBrie(string nome)
         {
             return nome == "Aged Brie";
@@ -42,19 +39,23 @@ namespace Aula05.GildedRose
         {
             for (var i = 0; i < Items.Count; i++)
             {
-                if (EhSulfuras(Items[i].Name)) continue;
-
-                if (EhItemEspecial(Items[i].Name))
+                if (Items[i] is Sulfuras) continue;
+                
+                if(Items[i] is AgedBrie item)
                 {
-                    if (Items[i].Quality < 50)
+                    item.UpdateQuality();
+                }
+                else
+                {
+                    if (EhBackstagePass(Items[i].Name))
                     {
-                        Items[i].Quality = Items[i].Quality + 1;
-
-                        if (EhBackstagePass(Items[i].Name))
+                        if (Items[i].Quality < QUALIDADEMAXIMA)
                         {
+                            Items[i].Quality = Items[i].Quality + 1;
+
                             if (Items[i].SellIn < 11)
                             {
-                                if (Items[i].Quality < 50)
+                                if (Items[i].Quality < QUALIDADEMAXIMA)
                                 {
                                     Items[i].Quality = Items[i].Quality + 1;
                                 }
@@ -62,53 +63,43 @@ namespace Aula05.GildedRose
 
                             if (Items[i].SellIn < 6)
                             {
-                                if (Items[i].Quality < 50)
+                                if (Items[i].Quality < QUALIDADEMAXIMA)
                                 {
                                     Items[i].Quality = Items[i].Quality + 1;
                                 }
-                            }
-                        }
-                    }
-                }
-                else
-                {
-                    if (Items[i].Quality > 0)
-                    {
-                        if(EhConjured(Items[i].Name))
-                        {
-                            Items[i].Quality = Items[i].Quality - 2;
-                        }
-                        else 
-                        {
-                            Items[i].Quality = Items[i].Quality - 1;
-                        }
-                    }
-                }
-
-                Items[i].SellIn = Items[i].SellIn - 1;
-                
-                if (Items[i].SellIn < 0)
-                {
-                    if (!EhAgedBrie(Items[i].Name))
-                    {
-                        if (!EhBackstagePass(Items[i].Name))
-                        {
-                            if (Items[i].Quality > 0)
-                            {
-                                Items[i].Quality = Items[i].Quality - 1;                             
-                            }
-                        }
-                        else
-                        {
-                            Items[i].Quality = Items[i].Quality - Items[i].Quality;
+                            }                            
                         }
                     }
                     else
                     {
-                        if (Items[i].Quality < 50)
+                        if (Items[i].Quality > 0)
                         {
-                            Items[i].Quality = Items[i].Quality + 1;
+                            if (EhConjured(Items[i].Name))
+                            {
+                                Items[i].Quality = Items[i].Quality - 2;
+                            }
+                            else
+                            {
+                                Items[i].Quality = Items[i].Quality - 1;
+                            }
                         }
+                    }
+
+                    Items[i].SellIn = Items[i].SellIn - 1;
+
+                    if (Items[i].SellIn < 0)
+                    {                                             
+                        if (EhBackstagePass(Items[i].Name))
+                        {
+                            Items[i].Quality = Items[i].Quality - Items[i].Quality;
+                        }
+                        else
+                        {
+                            if (Items[i].Quality > 0)
+                            {
+                                Items[i].Quality = Items[i].Quality - 1;
+                            }
+                        }                        
                     }
                 }
             }
