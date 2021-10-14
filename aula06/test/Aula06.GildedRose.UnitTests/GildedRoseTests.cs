@@ -292,5 +292,26 @@ namespace Aula05.GildedRose.UnitTests
             item.Quality.Should().Be(qualityEsperado);
             item.SellIn.Should().Be(sellInEsperado);
         }
+
+        [Fact]
+        public void UpdateQuality_ItemConjurado_QualidadeCaiDuasUnidadesMaximo0()
+        {
+            //arrange
+            var item = new Item
+            {
+                Name = "Conjured Mana Cake",
+                Quality = 10,
+                SellIn = 10
+            };
+
+            var gildedRose = CriarGildRose(item);
+
+            //act
+            gildedRose.UpdateQuality();
+
+            //assert
+            item.Quality.Should().Be(8);
+            item.SellIn.Should().Be(9);
+        }
     }
 }
