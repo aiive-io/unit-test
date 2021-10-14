@@ -61,11 +61,10 @@ namespace Aula05.GildedRose.UnitTests
             item.Quality.Should().Be(80);
         }
 
-        public static IEnumerable<object[]> ItensEspeciais =>
+        public static IEnumerable<object[]> ItensBackstage =>
         new List<object[]>
         {
-            new object[] { new Item { Name = "Aged Brie", Quality = 50, SellIn = 10 }, 9 },
-            new object[] { new Item { Name = "Aged Brie", Quality = 50, SellIn = -1 }, -2 },
+           
             new object[] { new Item { Name = "Backstage passes to a TAFKAL80ETC concert", 
                 Quality = 50, 
                 SellIn = 11 }, 10 },
@@ -77,9 +76,30 @@ namespace Aula05.GildedRose.UnitTests
                 SellIn = 5 }, 4 },
         };
 
+        public static IEnumerable<object[]> ItensAgedBrie =>
+        new List<object[]>
+        {
+            new object[] { new Item { Name = "Aged Brie", Quality = 50, SellIn = 10 }, 9 },
+            new object[] { new Item { Name = "Aged Brie", Quality = 50, SellIn = -1 }, -2 },            
+        };
+
         [Theory]
-        [MemberData(nameof(ItensEspeciais))]
-        public void UpdateQuality_ItemAgedBrieOuBacktageQualidade50_QualidadeNaoAltera(Item item, int sellInEsperado)
+        [MemberData(nameof(ItensAgedBrie))]
+        public void UpdateQuality_ItemAgedBrieQualidade50_QualidadeNaoAltera(Item item, int sellInEsperado)
+        {
+            var gildedRose = CriarGildRose(item);
+
+            //act
+            gildedRose.UpdateQuality();
+
+            //assert
+            item.Quality.Should().Be(50);
+            item.SellIn.Should().Be(sellInEsperado);
+        }
+
+        [Theory]
+        [MemberData(nameof(ItensBackstage))]
+        public void UpdateQuality_ItemBacktageQualidade50_QualidadeNaoAltera(Item item, int sellInEsperado)
         {
             var gildedRose = CriarGildRose(item);
 

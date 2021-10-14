@@ -12,4 +12,14 @@ namespace Aula05.GildedRose
         public int SellIn { get; set; }
         public int Quality { get; set; }
     }
+
+    public class Sulfuras: Item
+    {
+        public Sulfuras(int sellIn = 0)
+        {
+            Name = "Sulfuras, Hand of Ragnaros";
+            SellIn = sellIn;
+            Quality = 80;
+        }
+    }
 }
