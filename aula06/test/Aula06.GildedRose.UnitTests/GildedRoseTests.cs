@@ -198,11 +198,31 @@ namespace Aula05.GildedRose.UnitTests
             item.SellIn.Should().Be(sellInEsperado);
         }
 
+        [Fact]
+        public void UpdateQuality_ItemBacksateSellInIgualAZero_QualidadeCaiPara0()
+        {
+            //arrange
+            var item = new Item
+            {
+                Name = "Backstage passes to a TAFKAL80ETC concert",
+                Quality = 1,
+                SellIn = 0
+            };
+
+            var gildedRose = CriarGildRose(item);
+
+            //act
+            gildedRose.UpdateQuality();
+
+            //assert
+            item.Quality.Should().Be(0);
+            item.SellIn.Should().Be(-1);
+        }
 
         [Theory]        
         [InlineData(2, 5, 5, 4)]
         [InlineData(2, 4, 5, 3)]
-        public void UpdateQuality_ItemBackstageSellInMenorOuIgualA5_QualidadeSobe3UnidadesMaximo50(
+        public void UpdateQuality_ItemBackstageSellInMenorOuIgualA5MaiorQue0_QualidadeSobe3UnidadesMaximo50(
             int quality,
             int sellIn,
             int qualityEsperado,
@@ -226,10 +246,29 @@ namespace Aula05.GildedRose.UnitTests
             item.SellIn.Should().Be(sellInEsperado);
         }
 
+        [Fact]
+        public void UpdateQuality_ItemNormalQualidadeZero_QualidadeNaoAltera()
+        {
+            //arrange
+            var item = new Item
+            {
+                Name = "normal",
+                Quality = 0,
+                SellIn = 1
+            };
+
+            var gildedRose = CriarGildRose(item);
+
+            //act
+            gildedRose.UpdateQuality();
+
+            //assert
+            item.Quality.Should().Be(0);
+        }
+
         [Theory]
         [InlineData(10, 10, 9, 9)]
         [InlineData(10, 1, 9, 0)]
-        //[InlineData(0, 1, 0, 0)] - Qualidade nao pode ser negativa.
         public void UpdateQuality_ItemNormalSellInMaiorQue0_QualidadeCaiUmaUnidadeAteMinimo0(
             int quality,
             int sellIn,
