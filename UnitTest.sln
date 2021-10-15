@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.0.31717.71
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31702.278
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "aula01", "aula01", "{B82277DF-5B94-4CAC-BD4C-861FFF55F138}"
 EndProject
@@ -68,7 +68,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "aula07", "aula07", "{EAAA8A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aula07", "aula07\src\Aula07\Aula07.csproj", "{20DCD588-90BB-48E8-ABC8-6AF1E1B58865}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aula07.UnitTests", "aula07\test\Aula07.UnitTests\Aula07.UnitTests.csproj", "{0575C625-BEE3-42E9-BDF0-B714EE74161A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aula07.UnitTests", "aula07\test\Aula07.UnitTests\Aula07.UnitTests.csproj", "{0575C625-BEE3-42E9-BDF0-B714EE74161A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aula07.WebApi", "aula07\src\Aula07.WebApi\Aula07.WebApi.csproj", "{A1DB52AF-2487-478A-ADC9-6E12EC2FC854}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aula07.WebApi.IntegrationTest", "aula07\test\Aula07.WebApi.IntegrationTest\Aula07.WebApi.IntegrationTest.csproj", "{E6916B4E-78B0-41E3-8BD5-1A10C2A985B8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -176,6 +180,14 @@ Global
 		{0575C625-BEE3-42E9-BDF0-B714EE74161A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0575C625-BEE3-42E9-BDF0-B714EE74161A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0575C625-BEE3-42E9-BDF0-B714EE74161A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1DB52AF-2487-478A-ADC9-6E12EC2FC854}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1DB52AF-2487-478A-ADC9-6E12EC2FC854}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1DB52AF-2487-478A-ADC9-6E12EC2FC854}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1DB52AF-2487-478A-ADC9-6E12EC2FC854}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6916B4E-78B0-41E3-8BD5-1A10C2A985B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6916B4E-78B0-41E3-8BD5-1A10C2A985B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6916B4E-78B0-41E3-8BD5-1A10C2A985B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6916B4E-78B0-41E3-8BD5-1A10C2A985B8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -206,6 +218,8 @@ Global
 		{6F340738-C4C9-47A8-A1FD-3EB4EE2947EA} = {11BB7C04-CC38-48CA-8A33-875F583FC335}
 		{20DCD588-90BB-48E8-ABC8-6AF1E1B58865} = {EAAA8A85-DA23-43CF-8A43-F7164A01A4E1}
 		{0575C625-BEE3-42E9-BDF0-B714EE74161A} = {EAAA8A85-DA23-43CF-8A43-F7164A01A4E1}
+		{A1DB52AF-2487-478A-ADC9-6E12EC2FC854} = {EAAA8A85-DA23-43CF-8A43-F7164A01A4E1}
+		{E6916B4E-78B0-41E3-8BD5-1A10C2A985B8} = {EAAA8A85-DA23-43CF-8A43-F7164A01A4E1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {19763ED3-809D-497A-AB22-0D269F834EB2}

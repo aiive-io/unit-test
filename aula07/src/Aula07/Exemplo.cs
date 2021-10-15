@@ -6,7 +6,24 @@ using System.Threading.Tasks;
 
 namespace Aula07
 {
-    class Exemplo
+    public interface Teste { }
+    public interface Teste1 { }
+    public interface Teste2 { }
+
+    public interface IExemploService { }
+
+    public class ExemploService : IExemploService
     {
+        public ExemploService(Teste teste, Teste1 teste1, Teste2 teste2) 
+        {
+        }
+    }
+
+    public class Exemplo
+    {
+        public Exemplo(IExemploService service)
+        {
+
+        }
     }
 }
