@@ -52,17 +52,23 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aula05.GildedRose.Tests.Sha
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "aula06", "aula06", "{11BB7C04-CC38-48CA-8A33-875F583FC335}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aula06.PetClinic.Webapi", "aula06\src\Aula06.PetClinic.Webapi\Aula06.PetClinic.Webapi.csproj", "{1C3DCE30-43C6-40EC-A038-D52420FD970E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aula06.PetClinic.Webapi", "aula06\src\Aula06.PetClinic.Webapi\Aula06.PetClinic.Webapi.csproj", "{1C3DCE30-43C6-40EC-A038-D52420FD970E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aula06.PetClinic.Webapi.UnitTests", "aula06\test\Aula06.PetClinic.Webapi.UnitTests\Aula06.PetClinic.Webapi.UnitTests.csproj", "{E89B1375-9CCA-4C3F-BA58-33B7AF967165}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aula06.PetClinic.Webapi.UnitTests", "aula06\test\Aula06.PetClinic.Webapi.UnitTests\Aula06.PetClinic.Webapi.UnitTests.csproj", "{E89B1375-9CCA-4C3F-BA58-33B7AF967165}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aula06", "aula06\src\Aula06\Aula06.csproj", "{2B5CD5B0-419E-45D9-ACBA-F0092CEB0ACD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aula06", "aula06\src\Aula06\Aula06.csproj", "{2B5CD5B0-419E-45D9-ACBA-F0092CEB0ACD}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aula06.GildedRose", "aula06\src\Aula06.GildedRose\Aula06.GildedRose.csproj", "{C0F0D49E-9341-40AD-AF1E-B26F9F1DBD02}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aula06.GildedRose.Tests.Shared", "aula06\test\Aula06.GildedRose.Tests.Shared\Aula06.GildedRose.Tests.Shared.csproj", "{43E1F116-09CD-41C1-9D9F-343BE0BFFF5F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aula06.GildedRose.UnitTests", "aula06\test\Aula06.GildedRose.UnitTests\Aula06.GildedRose.UnitTests.csproj", "{6F340738-C4C9-47A8-A1FD-3EB4EE2947EA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "aula07", "aula07", "{EAAA8A85-DA23-43CF-8A43-F7164A01A4E1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aula07", "aula07\src\Aula07\Aula07.csproj", "{20DCD588-90BB-48E8-ABC8-6AF1E1B58865}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aula07.UnitTests", "aula07\test\Aula07.UnitTests\Aula07.UnitTests.csproj", "{0575C625-BEE3-42E9-BDF0-B714EE74161A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -162,6 +168,14 @@ Global
 		{6F340738-C4C9-47A8-A1FD-3EB4EE2947EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F340738-C4C9-47A8-A1FD-3EB4EE2947EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6F340738-C4C9-47A8-A1FD-3EB4EE2947EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20DCD588-90BB-48E8-ABC8-6AF1E1B58865}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20DCD588-90BB-48E8-ABC8-6AF1E1B58865}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20DCD588-90BB-48E8-ABC8-6AF1E1B58865}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20DCD588-90BB-48E8-ABC8-6AF1E1B58865}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0575C625-BEE3-42E9-BDF0-B714EE74161A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0575C625-BEE3-42E9-BDF0-B714EE74161A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0575C625-BEE3-42E9-BDF0-B714EE74161A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0575C625-BEE3-42E9-BDF0-B714EE74161A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -190,6 +204,8 @@ Global
 		{C0F0D49E-9341-40AD-AF1E-B26F9F1DBD02} = {11BB7C04-CC38-48CA-8A33-875F583FC335}
 		{43E1F116-09CD-41C1-9D9F-343BE0BFFF5F} = {11BB7C04-CC38-48CA-8A33-875F583FC335}
 		{6F340738-C4C9-47A8-A1FD-3EB4EE2947EA} = {11BB7C04-CC38-48CA-8A33-875F583FC335}
+		{20DCD588-90BB-48E8-ABC8-6AF1E1B58865} = {EAAA8A85-DA23-43CF-8A43-F7164A01A4E1}
+		{0575C625-BEE3-42E9-BDF0-B714EE74161A} = {EAAA8A85-DA23-43CF-8A43-F7164A01A4E1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {19763ED3-809D-497A-AB22-0D269F834EB2}
