@@ -10,6 +10,7 @@ namespace Aula07.UnitTests
 {
     public class CadastradorDeClientesServiceTests
     {
+        //Comunicação -> Se um mock foi invocado quando o nosso método foi chamado. 
         [Fact]
         public void EnviarBoasVindas_InvocarMetodo_EnviaEmail()
         {
@@ -19,7 +20,7 @@ namespace Aula07.UnitTests
 
             service.EnviarBoasVindas("user@email.com");
 
-            A.CallTo(() => service.EnviarBoasVindas("user@email.com")).MustHaveHappenedOnceExactly();
+            A.CallTo(() => mockEmailService.Enviar("user@email.com")).MustHaveHappenedOnceExactly();
             
         }
     }

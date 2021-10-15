@@ -8,7 +8,7 @@ namespace Aula07
 {
     public interface IEmailService
     {
-
+        void Enviar(string email);
     }
 
     public class CadastradorDeClientesService
@@ -22,7 +22,7 @@ namespace Aula07
 
         public void EnviarBoasVindas(string email)
         {
-
+            _emailService.Enviar(email);
         }
     }
 }

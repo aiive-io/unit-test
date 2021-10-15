@@ -10,6 +10,7 @@ namespace Aula07.UnitTests
 {
     public class PedidoTests
     {
+        //Testando a interação -> Você testa o efeito que o seu teste causou em alguma propriedade ou variável.
         [Fact]
         public void AdicionarProduto_AdicionarProduto_ListaDeProdutosAumenta()
         {

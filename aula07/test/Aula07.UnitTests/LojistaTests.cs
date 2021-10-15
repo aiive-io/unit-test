@@ -6,6 +6,7 @@ namespace Aula07.UnitTests
 {
     public class LojistaTests
     {
+        //Output Test -> Método retornou um valor. A Asserção é feita em cima do valor retornado.
         [Fact]
         public void Discount_of_two_products()
         {
